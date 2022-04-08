@@ -1,0 +1,103 @@
+<script>
+
+
+	export let open = false;
+    export let position = "bottom";
+	export let showBackdrop = false;
+	export let swipeToClose = true;
+	export let clickBackdropToClose = true;
+	import { slide } from "svelte/transition";
+	import { createEventDispatcher } from "svelte";
+	import { browser } from "$app/env";
+	import SwipeListener from "swipe-listener";
+
+	let dispatch = createEventDispatcher();
+
+	const handleBackdropClick = ()=>{
+		if (clickBackdropToClose){
+			dispatch("close",true);	
+			open = !open;
+			makeBodyScroll();
+
+		}
+	}
+
+	const makeBodyScroll = ()=>{
+		document.body.style.overflowY = "auto";
+	}
+
+	const swipe = node =>{
+		SwipeListener(node);
+		node.addEventListener("swipe", event=>{
+			if (node.scrollTop === 0){
+				let direction = event.detail.directions;
+				if (direction.bottom === true && swipeToClose === true){
+					open = !open;
+					dispatch("close",true);
+				}
+			}
+		})
+	}
+
+</script>
+
+
+
+<div 
+	class="sheet-dialog-container"
+	class:backdrop={showBackdrop}
+	on:click|self={handleBackdropClick}
+	style:position={open === true ? "fixed" : "revert"}
+	>
+	{#if open}
+		<span style:display="none">{#if browser && showBackdrop === true}{document.body.style.overflowY = "hidden"}{/if}</span>
+		<div
+		use:swipe
+		class="sheet-dialog"
+		transition:slide
+		class:top = {position == "top"}
+		>
+			<slot/>
+		</div>
+	{/if}
+</div>
+
+
+<style>
+
+	.top {
+		top: 0;
+		bottom: revert !important;
+	}
+
+	.backdrop {
+		position:fixed;
+		bottom: 0;
+		top:0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: var(--sheet-dialog-backdrop-background,rgba(0,0,0,0.7));
+	}
+	.sheet-dialog {
+		z-index: var(--z-index,9999);
+		position: fixed;
+		overflow: auto;
+		background: var(--sheet-dialog-background,blue);
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: var(--sheet-dialog-color,white);
+		padding: var(--sheet-dialog-padding, 10px);
+		max-height: var(--maximum-height,30%);
+	}
+
+	.sheet-dialog::-webkit-scrollbar {
+		width: 5px;
+		border-radius: 0% !important;
+	}
+
+	.sheet-dialog::-webkit-scrollbar-track {
+		border-radius: none;
+	}
+</style>

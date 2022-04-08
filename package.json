@@ -1,0 +1,46 @@
+{
+  "name": "svelte-sheet-modal",
+  "version": "0.0.1",
+  "description": "Simple sheet modal component made in Svelte",
+  "author": {
+    "name": "Lucretius Biah",
+    "email": "lucretiusbiah@protonmail.com",
+    "url": "https://www.kudadam.com"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "sheet modal",
+    "modal",
+    "dialog"
+  ],
+  "homepage": "https://kudadam.github.io/svelte-sheet-modal",
+  "readme": "https://github.com/kudadam/svelte-sheet-modal",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kudadam/svelte-sheet-modal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kudadam/svelte-sheet-modal/issues",
+    "email": "lucretiusbiah@protonmail.com"
+  },
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "svelte": "^3.46.0",
+    "swipe-listener": "^1.3.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.5.0",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
+  }
+}
