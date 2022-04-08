@@ -1,4 +1,5 @@
-
+## 0.0.4
+* [Fix] Modal hidden under other content
 ## 0.0.3
 * [Fix] Moved the `swipe-listener` library to dependencies
 ## 0.0.2
