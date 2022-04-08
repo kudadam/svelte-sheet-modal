@@ -7,14 +7,18 @@ specifiers:
   svelte: ^3.46.0
   svelte2tsx: ^0.5.7
   swipe-listener: ^1.3.0
+  typescript: ^4.6.3
+
+dependencies:
+  swipe-listener: 1.3.0
 
 devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.29
-  '@sveltejs/kit': 1.0.0-next.308_svelte@3.46.6
+  '@sveltejs/kit': 1.0.0-next.309_svelte@3.46.6
   gh-pages: 3.2.3
   svelte: 3.46.6
-  svelte2tsx: 0.5.7_svelte@3.46.6
-  swipe-listener: 1.3.0
+  svelte2tsx: 0.5.7_svelte@3.46.6+typescript@4.6.3
+  typescript: 4.6.3
 
 packages:
 
@@ -32,8 +36,8 @@ packages:
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.308_svelte@3.46.6:
-    resolution: {integrity: sha512-/ORLef5kZEMTUgUkdSQ5Lsn3IKBRNYmLdJ26JjtSa03nPKsybvSMiGIho9WS6ESBw3+XaYF91TqksTyr/gTeoA==}
+  /@sveltejs/kit/1.0.0-next.309_svelte@3.46.6:
+    resolution: {integrity: sha512-voZ6tqlVLQURxIvbE+wrRtMg9YcJc4uMu0CMI02jldbxnv7GYdZHFyDzjkLJ3BCu6jumSD6kVoxE+FmkaTdNmQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -706,7 +710,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /svelte2tsx/0.5.7_svelte@3.46.6:
+  /svelte2tsx/0.5.7_svelte@3.46.6+typescript@4.6.3:
     resolution: {integrity: sha512-rekPWR5at7DNvIlJRSCyKFZ6Go/KyqjDRL/zRWQSNMbvTIocsm/gDtSbLz64ZP5Qz3tUeod7QzDqX13lF60kCg==}
     peerDependencies:
       svelte: ^3.24
@@ -715,11 +719,12 @@ packages:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
       svelte: 3.46.6
+      typescript: 4.6.3
     dev: true
 
   /swipe-listener/1.3.0:
     resolution: {integrity: sha512-8cOZEHn8I2aVjKiAiu4tprZAS6e0nTy4RjuN/cAALKU/8212u+dqT1cytWGIoWjVzVxVggIduUtuckrHGu6/8Q==}
-    dev: true
+    dev: false
 
   /tiny-glob/0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
@@ -737,6 +742,12 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: true
+
+  /typescript/4.6.3:
+    resolution: {integrity: sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /universalify/0.1.2:
