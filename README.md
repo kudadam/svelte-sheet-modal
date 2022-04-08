@@ -1,4 +1,4 @@
-# Svelte Sheet Dialog@0.0.1
+# Svelte Sheet Dialog
 
 *Simple, light weight, customizable, sheet dialog made in Svelte*
 
@@ -77,3 +77,4 @@ These are the attributes which the component
 | `--maximum-height`                   | 30%               | This is used to set the maximum height of the modal          |
 | `swipeToClose`                       | `True`            | Allows the modal to be closed by swiping down on the modal   |
 | --z-index                            | 9999              | This allows you to set the order stacking of the modal       |
+| closeWithEscape                      | true              | Allows you to close the modal by pressing the escape key     |

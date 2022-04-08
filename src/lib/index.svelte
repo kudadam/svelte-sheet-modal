@@ -1,11 +1,10 @@
 <script>
-
-
 	export let open = false;
     export let position = "bottom";
 	export let showBackdrop = false;
 	export let swipeToClose = true;
 	export let clickBackdropToClose = true;
+	export let closeWithEscape = true;
 	import { slide } from "svelte/transition";
 	import { createEventDispatcher } from "svelte";
 	import { browser } from "$app/env";
@@ -15,15 +14,10 @@
 
 	const handleBackdropClick = ()=>{
 		if (clickBackdropToClose){
-			dispatch("close",true);	
 			open = !open;
-			makeBodyScroll();
-
+			document.body.style.overflowY = "auto";
+			dispatch("close",true);	
 		}
-	}
-
-	const makeBodyScroll = ()=>{
-		document.body.style.overflowY = "auto";
 	}
 
 	const swipe = node =>{
@@ -33,6 +27,7 @@
 				let direction = event.detail.directions;
 				if (direction.bottom === true && swipeToClose === true){
 					open = !open;
+					document.body.style.overflowY = "auto";
 					dispatch("close",true);
 				}
 			}
@@ -41,7 +36,14 @@
 
 </script>
 
-
+<svelte:window
+	on:keydown={event=>{
+		if (event.key === "Escape" && closeWithEscape === true){
+			open = false;
+			dispatch("close",true)
+		}
+	}}
+/>
 
 <div 
 	class="sheet-dialog-container"

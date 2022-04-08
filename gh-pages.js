@@ -1,5 +1,6 @@
 import ghpages from "gh-pages";
 
+ghpages.clean();
 ghpages.publish(
     "public",
     {
@@ -8,7 +9,8 @@ ghpages.publish(
         user: {
             name: "Lucretius Biah",
             email: "lucretiusbiah@protonmail.com"
-        }
+        },
+        dotfiles: true
     },
     (e)=>{
         console.log(e)

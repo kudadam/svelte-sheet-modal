@@ -1,6 +1,6 @@
 {
   "name": "svelte-sheet-modal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple sheet modal component made in Svelte",
   "author": {
     "name": "Lucretius Biah",
@@ -29,14 +29,13 @@
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync"
+    "prepare": "svelte-kit sync",
+    "deploy": "node gh-pages.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.29",
     "@sveltejs/kit": "next",
     "gh-pages": "^3.2.3",
-    "i": "^0.3.7",
-    "npm": "^8.6.0",
     "svelte": "^3.46.0",
     "svelte2tsx": "^0.5.7",
     "swipe-listener": "^1.3.0"

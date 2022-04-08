@@ -3,13 +3,13 @@
     import { onMount } from "svelte";
     let firstDemoOpen = false;
     let dialogOpen = false;
-    let content = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores quaerat facere amet, quia culpa dolore sit quos eligendi doloribus";
+    let content = `    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, voluptatum sed officia unde impedit est earum, sit, animi in placeat numquam quaerat explicabo saepe commodi suscipit consequatur. Vitae, iure quo.
+    Provident iusto ducimus nihil cumque nemo, commodi laboriosam amet sint obcaecati harum in iure, tempore sequi iste excepturi. Fuga dolores, pariatur eveniet exercitationem necessitatibus sunt incidunt illo tempora beatae `;
     let dialogBackground = "linear-gradient(red,blue)";
     let dialogColor = "white";
     let dialogPadding = "5px";
     let dialogPosition = "bottom";
     let showBackdrop = false;
-
 
     onMount(()=>{
         let p = document.createElement("script");
@@ -25,9 +25,9 @@
 </script>
 <main>
     <div class="center">
-        <h1>Svelte Sheet Dialog<small>@0.0.1</small></h1>
+        <h1>Svelte Sheet Dialog</h1>
         <p><i>Simple, light weight, customizable, sheet dialog made in Svelte</i></p>
-        <img src="{new URL("/logo.jpeg",import.meta.url).href}" height="200" width="200" alt="Logo"><br/>
+        <img src="https://raw.githubusercontent.com/kudadam/svelte-sheet-modal/site/logo.jpeg" height="200" width="200" alt="Logo"><br/>
         <small>by <a href="https://www.kudadam.com"><i>@kudadam</i></a></small>
     </div>
 
@@ -164,9 +164,19 @@ on:close={()=>{dialogOpen=false}}
                     <td>This is used to set the position of the modal. Valid values are <code>top</code> and <code>bottom</code></td>
                 </tr>
                 <tr>
+                    <td>closeWithEscape</td>
+                    <td>true</td>
+                    <td>Allows you to close the modal by clicking on the Escape key</td>
+                </tr>
+                <tr>
                     <td>showBackdrop</td>
                     <td><code>false</code></td>
                     <td>If set to <code>true</code>, a backdrop will be displayed when the component is shown</td>
+                </tr>
+                <tr>
+                    <td>swipeToClose</td>
+                    <td><code>True</code></td>
+                    <td>Allows the modal to be closed by swiping down on the modal</td>
                 </tr>
                 <tr>
                     <td>clickBackdropToClose</td>
@@ -194,12 +204,7 @@ on:close={()=>{dialogOpen=false}}
                     <td>This is used to set the maximum height of the modal</td>
                 </tr>
                 <tr>
-                    <td><code>swipeToClose</code></td>
-                    <td><code>True</code></td>
-                    <td>Allows the modal to be closed by swiping down on the modal</td>
-                </tr>
-                <tr>
-                    <td>--z-index</td>
+                    <td><code>--z-index</code></td>
                     <td>9999</td>
                     <td>This allows you to set the order stacking of the modal</td>
                 </tr>
@@ -232,7 +237,30 @@ on:close={()=>{dialogOpen=false}}
 
 <svelte:head>
     <meta name="theme-color" content="#202b38">
+    <meta name="description" content="Simple, lightweight sheet component made in Svelte">
     <script defer src="" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="h" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Svelte Sheet Dialog</title>
+    
+<!-- HTML Meta Tags -->
+<title>Svelte Sheet Dialog</title>
+<meta name="description" content="A sheet modal component made in SvelteKit">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://kudadam.github.io/svelte-sheet-modal/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Svelte Sheet Dialog">
+<meta property="og:description" content="A sheet modal component made in SvelteKit">
+<meta property="og:image" content="https://raw.githubusercontent.com/kudadam/svelte-sheet-modal/site/logo.jpeg">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="kudadam.github.io">
+<meta property="twitter:url" content="https://kudadam.github.io/svelte-sheet-modal/">
+<meta name="twitter:title" content="Svelte Sheet Dialog">
+<meta name="twitter:description" content="A sheet modal component made in SvelteKit">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kudadam/svelte-sheet-modal/site/logo.jpeg">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+      
 </svelte:head>
