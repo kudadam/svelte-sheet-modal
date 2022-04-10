@@ -79,6 +79,7 @@
 	.backdrop {
 		position:fixed;
 		bottom: 0;
+		z-index: var(--z-index,9999);
 		top:0;
 		left: 0;
 		height: 100%;
